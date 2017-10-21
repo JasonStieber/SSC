@@ -17,8 +17,6 @@ ul.header li a { color: #FFF; font-weight: bold; text-decoration: none; padding:
   </head> <body> <div id="container"> <div id="content"> </div> </div>
 
   <script type="text/babel">
-    var med1 = "str";
-    var med2 = 2;
 var destination = document.querySelector("#container");
 var { Router, Route, IndexRoute, IndexLink, hashHistory, Link } = ReactRouter;
 
@@ -128,6 +126,7 @@ var Elaine = React.createClass({
 });
 
 var Jackie = React.createClass({
+<<<<<<< HEAD
   render: function() { 
       var rows = [];
       var lf = document.createElement('br');
@@ -140,8 +139,10 @@ var Jackie = React.createClass({
       }
 
       return ( <div>
+=======
+  render: function() { return ( <div>
+>>>>>>> f7a1cc72fd85d309a6598819facee2e9d5c7afa5
           <h2>TODO</h2>
-          {rows}
           <p>URL <a href="http://.com">link</a>.</p>
         </div> ); }
 });
