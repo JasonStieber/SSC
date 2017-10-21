@@ -75,11 +75,18 @@ var Calendar = React.createClass({
           <p>URL <a href="http://.com">link</a>.</p>
         </div> ); }
 });
-
+var ev = {"type":"medical","description":"Free Flu vaccines",
+location: "Bay Area Walgreens Locations",url:"https://www.walgreens.com/pharmacy/immunization/seasonal_flu.jsp"};
 var EventSSC = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+    <h2>EVENT DETAILS</h2>
+    <h3>Type: </h3>
+    <p>{ev.type}</p>
+    <h3>Description:</h3>
+    <p>{ev.description}</p>
+    <h3>Location:</h3>
+    <p>{ev.location}</p>
+    <p>URL <a href={ev.url}>{ev.url}</a>.</p>
         </div> ); }
 });
 
@@ -113,8 +120,8 @@ var Jackie = React.createClass({
 
 var Lisa = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+          <h2>My LinkedIn Profile</h2>
+          <p>URL <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
         </div> ); }
 });
 
@@ -159,7 +166,7 @@ var med3 = [
 {"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"}
 ];
 var Celine = React.createClass({
-	render: function() { 
+	render: function() {
 		var rows=[];
 		for (var line in med3){
 			{/*rows.push(med3[line].type);
@@ -168,7 +175,7 @@ var Celine = React.createClass({
 			rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
 			rows.push(<br></br>);
 			rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
-			
+
 			rows.push(<br></br>);
 			rows.push(<br></br>);
 			rows.push(<br></br>);
@@ -178,8 +185,8 @@ var Celine = React.createClass({
 			{/*<p>URL <a href="http://.com">link</a>.</p>*/}
 			<br></br>
 			{rows}
-			
-		</div> ); 
+
+		</div> );
 	}
 }
 );
