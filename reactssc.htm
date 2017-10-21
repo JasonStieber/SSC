@@ -1,10 +1,12 @@
-<!doctype html> <html> <head> <title> router </title>
+<!doctype html> <html> <head> <title>Social Services Calendar</title>
   <script src="https://fb.me/react-15.0.0-rc.2.js"></script>
   <script src="https://fb.me/react-dom-15.0.0-rc.2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
+  <script src="today.js"></script>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <style> body { background-color: #653796; padding: 20px; margin: 0; }
 
-  <style> body { background-color: #21FAFA; padding: 20px; margin: 0; }
 h1, h2, p, ul, li { font-family: Helvetica, Arial, sans-serif; }
 ul.header li { display: inline; list-style-type: none; margin: 0; }
 ul.header { background-color: #111; padding: 0; }
@@ -92,8 +94,11 @@ var Medical = React.createClass({
 
 var Today = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+          <h2>Hello</h2>
+          <h3>Today Is</h3>
+          <div id="todaysDate"></div>
+          <div class="todaysEvents">Today&#39;s Events:</div>
+
         </div> ); }
 });
 

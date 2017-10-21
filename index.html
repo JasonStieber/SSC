@@ -1,10 +1,12 @@
-<!doctype html> <html> <head> <title> router </title>
+<!doctype html> <html> <head> <title>Social Services Calendar</title>
   <script src="https://fb.me/react-15.0.0-rc.2.js"></script>
   <script src="https://fb.me/react-dom-15.0.0-rc.2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
   <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
+  <!-- <script type="text/javascript" src="today.js"></script> -->
 
-  <style> body { background-color: #21FAFA; padding: 20px; margin: 0; }
+
+  <style> body { background-color: #653796; padding: 20px; margin: 0; font-family: sans-serif;}
 h1, h2, p, ul, li { font-family: Helvetica, Arial, sans-serif; }
 ul.header li { display: inline; list-style-type: none; margin: 0; }
 ul.header { background-color: #111; padding: 0; }
@@ -13,8 +15,14 @@ ul.header li a { color: #FFF; font-weight: bold; text-decoration: none; padding:
 .content h2 { padding: 0; margin: 0; }
 .content li { margin-bottom: 10px; }
 .active { background-color: #0099FF; }
+
   </style>
-  </head> <body> <div id="container"> <div id="content"> </div> </div>
+  <link type="text/css" rel="stylesheet" href="today.css">
+  <!-- Google cursive font -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+
+   <body> <div id="container"> <div id="content"> </div> </div>
 
   <script type="text/babel">
 var destination = document.querySelector("#container");
@@ -98,12 +106,52 @@ var Medical = React.createClass({
         </div> ); }
 });
 
+
+
+
 var Today = React.createClass({
-  render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+
+  render: function() {
+    var now, months, month, year, date, shownDate;
+
+    now = new Date();
+
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    month = now.getMonth();
+    date = now.getDate();
+    year = now.getFullYear();
+
+    shownDate = months[month] + " " + date + ", " + year;
+
+    var todayEvent;
+    return ( <div className="todayContainer">
+
+    <h2 className="todayHello">Hello</h2>
+    <h3 className="todayHeading">Today Is</h3>
+    <div className="todayDate">{shownDate}</div>
+
+    <div className="todaysEvents">Today&#39;s Events:</div>
+
+
         </div> ); }
+
 });
+
+// var med1 = "str";
+// var med2 = 2;
+// var med3 = [{"type":"medical"}];
+var now, months, month, year, date;
+
+now = new Date();
+
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+month = now.getMonth();
+
+year = now.getFullYear();
+
+date = month;
 
 var Elaine = React.createClass({
   render: function() { return ( <div>
