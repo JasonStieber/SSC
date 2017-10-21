@@ -76,10 +76,19 @@ var Calendar = React.createClass({
         </div> ); }
 });
 
+var ev = {"type":"medical","description":"Free Flu vaccines",
+location: "Bay Area Walgreens Locations",url:"https://www.walgreens.com/pharmacy/immunization/seasonal_flu.jsp"};
+var evarray = 
 var EventSSC = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+          <h2>EVENT DETAILS</h2>
+          <h3>Type: </h3>
+          <p>{ev.type}</p>
+          <h3>Description:</h3>
+          <p>{ev.description}</p>
+          <h3>Location:</h3>
+          <p>{ev.location}</p>
+          <p>URL <a href={ev.url}>{ev.url}</a>.</p>
         </div> ); }
 });
 
@@ -113,8 +122,8 @@ var Jackie = React.createClass({
 
 var Lisa = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+          <h2>My LinkedIn Profile</h2>
+          <p> <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a></p>
         </div> ); }
 });
 
