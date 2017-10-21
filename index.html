@@ -87,10 +87,30 @@ var EventSSC = React.createClass({
 });
 
 var Medical = React.createClass({
-  render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
-        </div> ); }
+  render: function() { 
+    var rows=[];
+    for (var line in med3){
+      {/*rows.push(med3[line].type);
+      rows.push(<br></br>);*/}
+      {/*rows.push(<a href="https://www.paypal.com">{med3[line].org}</a>);*/}
+      if (med3[line].type == "medical"){
+        rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
+        rows.push(<br></br>);
+        rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+      }
+      
+    }
+    return ( <div>
+      <h2>Free Clinic</h2>
+      {/*<p>URL <a href="http://.com">link</a>.</p>*/}
+      <br></br>
+      {rows}
+      
+    </div> ); 
+  }
 });
 
 var Today = React.createClass({
@@ -157,13 +177,15 @@ var Celine = React.createClass({
 			{/*rows.push(med3[line].type);
 			rows.push(<br></br>);*/}
 			{/*rows.push(<a href="https://www.paypal.com">{med3[line].org}</a>);*/}
-			rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
-			rows.push(<br></br>);
-			rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
+      if (med3[line].type == "medical"){
+        rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
+        rows.push(<br></br>);
+        rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+      }
 			
-			rows.push(<br></br>);
-			rows.push(<br></br>);
-			rows.push(<br></br>);
 		}
 		return ( <div>
 			<h2>Free Clinic</h2>
