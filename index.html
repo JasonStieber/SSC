@@ -23,7 +23,7 @@ var { Router, Route, IndexRoute, IndexLink, hashHistory, Link } = ReactRouter;
 
 var App = React.createClass({
   render: function() { return ( <div>
-        <h1>Social Services </h1>
+        <h1>Social Services Events</h1>
         <ul className="header">
 	  <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
@@ -39,9 +39,11 @@ var App = React.createClass({
 var Home = React.createClass({
   render: function() { return ( <div>
           <h2>HELLO</h2>
-          <p>Cras facilisis urna ornare ex volutpat, et
-          dis parturient montes, nascetur ridiculus mus.</p>
-          <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+          <p>Social Services Events</p>
+          <p>Social Services Events is an application that seeks to connect the homeless or economically disadvantaged population with beneficial services and events in the Bay Area.
+	  Events can range from free health clinics, legal services, available shelters, and free meals.  
+	  This app seeks to organize the events for the day and for the month in an easy-to-understand manner.
+	  </p>
         </div> ); }
 });
 
