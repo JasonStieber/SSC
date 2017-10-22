@@ -32,7 +32,7 @@ var App = React.createClass({
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
 	  <li><Link to="/elaine" activeClassName="active">Elaine</Link></li>
 	  <li><Link to="/jackie" activeClassName="active">Jackie</Link></li>
-	  <li><Link to="/lisa" activeClassName="active">Lisa</Link></li>
+	  <li><Link to="/lisa" activeClassName="active">Team</Link></li>
 	  <li><Link to="/celine" activeClassName="active">Celine</Link></li>
         </ul>
         <div className="content"> {this.props.children} </div>
@@ -118,10 +118,16 @@ var Jackie = React.createClass({
         </div> ); }
 });
 
-var Lisa = React.createClass({
+var Team = React.createClass({
   render: function() { return ( <div>
-          <h2>My LinkedIn Profile</h2>
-          <p>URL <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
+          <h2>Team LinkedIn Profiles</h2>
+          <h3> Mentor: Henry Yu</h3>
+
+          <p> Elaine Wang:  <a href="https://www.linkedin.com/in/elainewangcal/">www.linkedin.com/in/elainewangcal</a>.</p>
+          <p> Lisa Litchfield:  <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
+          <p> Xilin Bai:  <a href="https://www.linkedin.com/in/xilin-bai-4a701846/">www.linkedin.com/in/xilinbai</a>.</p>
+          <p> Jackie Zhang:  <a href="https://www.linkedin.com/in/jackie-zhang-85219995/">www.linkedin.com/in/in/jackie-zhang-85219995</a>.</p>
+          <p> Jason stieber:  <a href="https://www.linkedin.com/in/jason-stieber-12b9b0a/">www.linkedin.com/in/jason-stieber-12b9b0a</a>.</p>
         </div> ); }
 });
 
@@ -202,7 +208,7 @@ ReactDOM.render(
       <Route path="today" component={Today} />
       <Route path="elaine" component={Elaine} />
       <Route path="jackie" component={Jackie} />
-      <Route path="lisa" component={Lisa} />
+      <Route path="lisa" component={Team} />
       <Route path="celine" component={Celine} />
     </Route>
   </Router>,
