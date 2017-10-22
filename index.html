@@ -20,7 +20,6 @@ ul.header li a { color: #FFF; font-weight: bold; text-decoration: none; padding:
   <script type="text/babel">
 var destination = document.querySelector("#container");
 var { Router, Route, IndexRoute, IndexLink, hashHistory, Link } = ReactRouter;
-var { BootstrapTable, TableHeaderColumn } = ReactBootstrapTable;
 
 var App = React.createClass({
   render: function() { return ( <div>
@@ -31,7 +30,7 @@ var App = React.createClass({
 	  <li><Link to="/eventssc" activeClassName="active">EventSSC</Link></li>
     <li><Link to="/medical" activeClassName="active">Medical</Link></li>
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
-	  <li><Link to="/lisa" activeClassName="active">Lisa</Link></li>
+	  <li><Link to="/team" activeClassName="active">Team</Link></li>
         </ul>
         <div className="content"> {this.props.children} </div>
       </div> ) }
@@ -228,7 +227,7 @@ var Team = React.createClass({
           <p> Lisa Litchfield:  <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
           <p> Xilin Bai:  <a href="https://www.linkedin.com/in/xilin-bai-4a701846/">www.linkedin.com/in/xilinbai</a>.</p>
           <p> Jackie Zhang:  <a href="https://www.linkedin.com/in/jackie-zhang-85219995/">www.linkedin.com/in/in/jackie-zhang-85219995</a>.</p>
-          <p> Jason stieber:  <a href="https://www.linkedin.com/in/jason-stieber-12b9b0a/">www.linkedin.com/in/jason-stieber-12b9b0a</a>.</p>
+          <p> Jason Stieber:  <a href="https://www.linkedin.com/in/jason-stieber-12b9b0a/">www.linkedin.com/in/jason-stieber-12b9b0a</a>.</p>
         </div> ); }
 });
 
@@ -286,7 +285,7 @@ ReactDOM.render(
       <Route path="eventssc" component={EventSSC} />
       <Route path="medical" component={Medical} />
       <Route path="today" component={Today} />
-      <Route path="lisa" component={Lisa} />
+      <Route path="team" component={Team} />
     </Route>
   </Router>,
   destination
