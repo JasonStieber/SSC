@@ -29,6 +29,7 @@ var App = React.createClass({
 	  <li><Link to="/contact" activeClassName="active">Contact</Link></li>
 	  <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
 	  <li><Link to="/eventssc" activeClassName="active">EventSSC</Link></li>
+    <li><Link to="/medical" activeClassName="active">Medical</Link></li>
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
 	  <li><Link to="/elaine" activeClassName="active">Elaine</Link></li>
 	  <li><Link to="/jackie" activeClassName="active">Jackie</Link></li>
@@ -91,10 +92,30 @@ var EventSSC = React.createClass({
 });
 
 var Medical = React.createClass({
-  render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
-        </div> ); }
+  render: function() { 
+    var rows=[];
+    for (var line in med3){
+      {/*rows.push(med3[line].type);
+      rows.push(<br></br>);*/}
+      {/*rows.push(<a href="https://www.paypal.com">{med3[line].org}</a>);*/}
+      if (med3[line].type == "medical"){
+        rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
+        rows.push(<br></br>);
+        rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+      }
+      
+    }
+    return ( <div>
+      <h2>Free Clinic</h2>
+      {/*<p>URL <a href="http://.com">link</a>.</p>*/}
+      <br></br>
+      {rows}
+      
+    </div> ); 
+  }
 });
 
 var Today = React.createClass({
@@ -112,7 +133,18 @@ var Elaine = React.createClass({
 });
 
 var Jackie = React.createClass({
-  render: function() { return ( <div>
+  render: function() { 
+      var rows = [];
+      var lf = document.createElement('br');
+      for(var center in med3){
+        rows.push(<a href="http://www.paypal.com">{med3[center].org}</a>);
+        rows.push(<br></br>);
+        rows.push(med3[center].street + ' ' + med3[center].city + ', ' + med3[center].state);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+      }
+
+      return ( <div>
           <h2>TODO</h2>
           <p>URL <a href="http://.com">link</a>.</p>
         </div> ); }
@@ -127,43 +159,20 @@ var Lisa = React.createClass({
 
 var med1 = "health";
 var med2 = "care";
-var medFoo = [
-{"type":"medical","name":"Young Parent Program - Mountain View- Los Altos Adult Education","street":"333 Moffett Blvd","city":"Mountain View","state":"CA","zip":"94043","link":"www.google.com"},
-{"type":"medical","name":"Education-Portal.com","street":"100 View St. #202","city":"Mountain View","state":"CA","zip":"94041","link":"www.google.com"},
-{"type":"medical","name":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","link":"www.google.com"},
-{"type":"medical","name":"Tri-Cities One-Stop Career Center - Newark","street":"39399 Cherry St","city":"Newark","state":"CA","zip":"94560","link":"www.google.com"},
-{"type":"medical","name":"Mid-Peninsula Housing Coalition","street":"658 Bair Island Road, Suite 300","city":"Redwood City","state":"CA","zip":"94063","link":"www.google.com"},
-{"type":"medical","name":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","link":""},
-{"type":"medical","name":"Omega Teaching","street":"1030 Curtis Street, Suite 201","city":"Menlo Park","state":"CA","zip":"94024","link":""},
-{"type":"medical","name":"Young Parent Program - Mountain View- Los Altos Adult Education","street":"333 Moffett Blvd","city":"Mountain View","state":"CA","zip":"94043","link":""},
-{"type":"medical","name":"Education-Portal.com","street":"100 View St. #202","city":"Mountain View","state":"CA","zip":"94041","link":""},
-{"type":"medical","name":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","link":""},
-{"type":"medical","name":"Prenatal Advantage Black Infant Health - San Mateo Health Services Agency","street":"2415 University Ave","city":"East Palo Alto","state":"CA","zip":"94303","link":""},
-{"type":"medical","name":"Sacramento Valley Optometric Society (SVOS)","street":"","city":"Sacramento","state":"CA","zip":"95818","link":""},
-{"type":"medical","name":"Community Pregnancy Center","street":"836 W El Camino Real","city":"Mountain View","state":"CA","zip":"94040","link":""},
-{"type":"medical","name":"Second Chance Cabrillo Center","street":"7643 Thornton Ave","city":"Fremont","state":"CA","zip":"94560","link":""},
-{"type":"medical","name":"Second Chance Newark Center","street":"6330 Thornton Ave","city":"Newark","state":"CA","zip":"94560","link":""},
-{"type":"medical","name":"STD/HIV Services - San Mateo County Health Services Clinic","street":"222 West 39th Ave","city":"San Mateo","state":"CA","zip":"94403","link":""},
-{"type":"medical","name":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","link":""}
-];
 var med3 = [
-{"org":"Young Parent Program - Mountain View- Los Altos Adult Education","street":"333 Moffett Blvd","city":"Mountain View","state":"CA","zip":"94043","location":"94043","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Education-Portal.com","street":"100 View St. #202","city":"Mountain View","state":"CA","zip":"94041","location":"94041","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Tri-Cities One-Stop Career Center - Newark","street":"39399 Cherry St","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Mid-Peninsula Housing Coalition","street":"658 Bair Island Road, Suite 300","city":"Redwood City","state":"CA","zip":"94063","location":"94063","datetime":"2017-10-21T12:34:56","type":"shelter","description":"shelter svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Omega Teaching","street":"1030 Curtis Street, Suite 201","city":"Menlo Park","state":"CA","zip":"94024","location":"94024","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Young Parent Program - Mountain View- Los Altos Adult Education","street":"333 Moffett Blvd","city":"Mountain View","state":"CA","zip":"94043","location":"94043","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Education-Portal.com","street":"100 View St. #202","city":"Mountain View","state":"CA","zip":"94041","location":"94041","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Prenatal Advantage Black Infant Health - San Mateo Health Services Agency","street":"2415 University Ave","city":"East Palo Alto","state":"CA","zip":"94303","location":"94303","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Sacramento Valley Optometric Society (SVOS)","street":"","city":"Sacramento","state":"CA","zip":"95818","location":"95818","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Community Pregnancy Center","street":"836 W El Camino Real","city":"Mountain View","state":"CA","zip":"94040","location":"94040","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Second Chance Cabrillo Center","street":"7643 Thornton Ave","city":"Fremont","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"meal","description":"meal svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Second Chance Newark Center","street":"6330 Thornton Ave","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"shelter","description":"shelter svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"STD/HIV Services - San Mateo County Health Services Clinic","street":"222 West 39th Ave","city":"San Mateo","state":"CA","zip":"94403","location":"94403","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"},
-{"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.paypal.com/us/home"}
+{"org":"Young Parent Program - Mountain View- Los Altos Adult Education","street":"333 Moffett Blvd","city":"Mountain View","state":"CA","zip":"94043","location":"94043","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"http://www.mvla.net/MVLA_Adult_Education/"},
+{"org":"Study.com","street":"100 View St. #202","city":"Mountain View","state":"CA","zip":"94041","location":"94041","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"http://study.com/"},
+{"org":"Newark Adult Education","street":"36120 Ruschin Dr","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.cde.ca.gov/schooldirectory/details?cdscode=01612340135418"},
+{"org":"Tri-Cities One-Stop Career Center - Newark","street":"39399 Cherry St","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"http://tricitiesonestop.com/"},
+{"org":"Mid-Peninsula Housing Coalition","street":"658 Bair Island Road, Suite 300","city":"Redwood City","state":"CA","zip":"94063","location":"94063","datetime":"2017-10-21T12:34:56","type":"shelter","description":"shelter svc","attendance":7,"url":"https://www.midpen-housing.org/"},
+{"org":"Omega Teaching","street":"1030 Curtis Street, Suite 201","city":"Menlo Park","state":"CA","zip":"94024","location":"94024","datetime":"2017-10-21T12:34:56","type":"education","description":"edu svc","attendance":7,"url":"https://www.yelp.com/biz/omega-teaching-menlo-park"},
+{"org":"Prenatal Advantage Black Infant Health - San Mateo Health Services Agency","street":"2415 University Ave","city":"East Palo Alto","state":"CA","zip":"94303","location":"94303","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"http://www.smchealth.org/bih"},
+{"org":"Sacramento Valley Optometric Society (SVOS)","street":"","city":"Sacramento","state":"CA","zip":"95818","location":"95818","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"http://www.svos.info/"},
+{"org":"Community Pregnancy Center","street":"836 W El Camino Real","city":"Mountain View","state":"CA","zip":"94040","location":"94040","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.chamberofcommerce.com/mountain-view-ca/32283515-community-pregnancy-center"},
+{"org":"Second Chance Cabrillo Center","street":"7643 Thornton Ave","city":"Fremont","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"meal","description":"meal svc","attendance":7,"url":"https://www.allaboutcounseling.com/local/listings/second-chance-cabrillo-center/"},
+{"org":"Second Chance Newark Center","street":"6330 Thornton Ave","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"shelter","description":"shelter svc","attendance":7,"url":"https://www.yelp.com/biz/second-chance-newark"},
+{"org":"STD/HIV Services - San Mateo County Health Services Clinic","street":"222 West 39th Ave","city":"San Mateo","state":"CA","zip":"94403","location":"94403","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"http://www.smchealth.org/hivstds"},
+{"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://health.usnews.com/best-hospitals/area/ca/lucile-salter-packard-childrens-hospital-at-stanford-6933605"}
 ];
 var Celine = React.createClass({
 	render: function() {
@@ -172,13 +181,15 @@ var Celine = React.createClass({
 			{/*rows.push(med3[line].type);
 			rows.push(<br></br>);*/}
 			{/*rows.push(<a href="https://www.paypal.com">{med3[line].org}</a>);*/}
-			rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
-			rows.push(<br></br>);
-			rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
-
-			rows.push(<br></br>);
-			rows.push(<br></br>);
-			rows.push(<br></br>);
+      if (med3[line].type == "medical"){
+        rows.push(<a href={med3[line].url}>{med3[line].org}</a>);
+        rows.push(<br></br>);
+        rows.push(med3[line].street +', '+ med3[line].city +', '+ med3[line].state +', '+ med3[line].zip);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+        rows.push(<br></br>);
+      }
+			
 		}
 		return ( <div>
 			<h2>Free Clinic</h2>
@@ -199,6 +210,7 @@ ReactDOM.render(
       <Route path="contact" component={Contact} />
       <Route path="calendar" component={Calendar} />
       <Route path="eventssc" component={EventSSC} />
+      <Route path="medical" component={Medical} />
       <Route path="today" component={Today} />
       <Route path="elaine" component={Elaine} />
       <Route path="jackie" component={Jackie} />
