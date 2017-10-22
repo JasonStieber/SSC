@@ -14,6 +14,8 @@ ul.header li a { color: #FFF; font-weight: bold; text-decoration: none; padding:
 .content li { margin-bottom: 10px; }
 .active { background-color: #0099FF; }
   </style>
+	  <link type="text/css" rel="stylesheet" href="today.css">
+
   </head> <body> <div id="container"> <div id="content"> </div> </div>
 
   <script type="text/babel">
@@ -119,9 +121,27 @@ var Medical = React.createClass({
 });
 
 var Today = React.createClass({
-  render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+  render: function() {
+    var now, months, month, year, date, shownDate;
+
+    now = new Date();
+
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    month = now.getMonth();
+    date = now.getDate();
+    year = now.getFullYear();
+
+    shownDate = months[month] + " " + date + ", " + year;
+
+    var todayEvent;
+    return ( <div className="todayContainer">
+
+    <h2 className="todayHello">Hello</h2>
+    <h3 className="todayHeading">Today Is</h3>
+    <div className="todayDate">{shownDate}</div>
+
+    <div className="todaysEvents">Today&#39;s Events:</div>
         </div> ); }
 });
 
