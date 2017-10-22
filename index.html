@@ -1,4 +1,4 @@
-<!doctype html> <html> <head> <title> router </title>
+<!doctype html> <html> <head> <title> Social Services </title>
   <script src="https://fb.me/react-15.0.0-rc.2.js"></script>
   <script src="https://fb.me/react-dom-15.0.0-rc.2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
@@ -24,19 +24,14 @@ var { BootstrapTable, TableHeaderColumn } = ReactBootstrapTable;
 
 var App = React.createClass({
   render: function() { return ( <div>
-        <h1>Simple SPA</h1>
+        <h1>Social Services </h1>
         <ul className="header">
 	  <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-	  <li><Link to="/stuff" activeClassName="active">Stuff</Link></li>
-	  <li><Link to="/contact" activeClassName="active">Contact</Link></li>
 	  <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
 	  <li><Link to="/eventssc" activeClassName="active">EventSSC</Link></li>
     <li><Link to="/medical" activeClassName="active">Medical</Link></li>
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
-	  <li><Link to="/elaine" activeClassName="active">Elaine</Link></li>
-	  <li><Link to="/jackie" activeClassName="active">Jackie</Link></li>
 	  <li><Link to="/lisa" activeClassName="active">Lisa</Link></li>
-	  <li><Link to="/celine" activeClassName="active">Celine</Link></li>
         </ul>
         <div className="content"> {this.props.children} </div>
       </div> ) }
@@ -224,10 +219,16 @@ var Jackie = React.createClass({
         </div> ); }
 });
 
-var Lisa = React.createClass({
+var Team = React.createClass({
   render: function() { return ( <div>
-          <h2>My LinkedIn Profile</h2>
-          <p>URL <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
+          <h2>Team LinkedIn Profiles</h2>
+          <h3> Mentor: Henry Yu</h3>
+
+          <p> Elaine Wang:  <a href="https://www.linkedin.com/in/elainewangcal/">www.linkedin.com/in/elainewangcal</a>.</p>
+          <p> Lisa Litchfield:  <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
+          <p> Xilin Bai:  <a href="https://www.linkedin.com/in/xilin-bai-4a701846/">www.linkedin.com/in/xilinbai</a>.</p>
+          <p> Jackie Zhang:  <a href="https://www.linkedin.com/in/jackie-zhang-85219995/">www.linkedin.com/in/in/jackie-zhang-85219995</a>.</p>
+          <p> Jason stieber:  <a href="https://www.linkedin.com/in/jason-stieber-12b9b0a/">www.linkedin.com/in/jason-stieber-12b9b0a</a>.</p>
         </div> ); }
 });
 
@@ -246,7 +247,7 @@ var med3 = [
 {"org":"Second Chance Cabrillo Center","street":"7643 Thornton Ave","city":"Fremont","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"meal","description":"meal svc","attendance":7,"url":"https://www.allaboutcounseling.com/local/listings/second-chance-cabrillo-center/"},
 {"org":"Second Chance Newark Center","street":"6330 Thornton Ave","city":"Newark","state":"CA","zip":"94560","location":"94560","datetime":"2017-10-21T12:34:56","type":"shelter","description":"shelter svc","attendance":7,"url":"https://www.yelp.com/biz/second-chance-newark"},
 {"org":"STD/HIV Services - San Mateo County Health Services Clinic","street":"222 West 39th Ave","city":"San Mateo","state":"CA","zip":"94403","location":"94403","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"http://www.smchealth.org/hivstds"},
-{"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://health.usnews.com/best-hospitals/area/ca/lucile-salter-packard-childrens-hospital-at-stanford-6933605"}
+{"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://www.mapquest.com/us/california/lucile-packard-childrens-hospital-303145263"}
 ];
 var Celine = React.createClass({
 	render: function() {
@@ -281,15 +282,11 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="stuff" component={Stuff} />
-      <Route path="contact" component={Contact} />
       <Route path="calendar" component={Calendar} />
       <Route path="eventssc" component={EventSSC} />
       <Route path="medical" component={Medical} />
       <Route path="today" component={Today} />
-      <Route path="elaine" component={Elaine} />
-      <Route path="jackie" component={Jackie} />
       <Route path="lisa" component={Lisa} />
-      <Route path="celine" component={Celine} />
     </Route>
   </Router>,
   destination
