@@ -76,11 +76,18 @@ var Calendar = React.createClass({
           <p>URL <a href="http://.com">link</a>.</p>
         </div> ); }
 });
-
+var ev = {"type":"medical","description":"Free Flu vaccines",
+location: "Bay Area Walgreens Locations",url:"https://www.walgreens.com/pharmacy/immunization/seasonal_flu.jsp"};
 var EventSSC = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+    <h2>EVENT DETAILS</h2>
+    <h3>Type: </h3>
+    <p>{ev.type}</p>
+    <h3>Description:</h3>
+    <p>{ev.description}</p>
+    <h3>Location:</h3>
+    <p>{ev.location}</p>
+    <p>URL <a href={ev.url}>{ev.url}</a>.</p>
         </div> ); }
 });
 
@@ -126,7 +133,6 @@ var Elaine = React.createClass({
 });
 
 var Jackie = React.createClass({
-<<<<<<< HEAD
   render: function() { 
       var rows = [];
       var lf = document.createElement('br');
@@ -139,9 +145,6 @@ var Jackie = React.createClass({
       }
 
       return ( <div>
-=======
-  render: function() { return ( <div>
->>>>>>> f7a1cc72fd85d309a6598819facee2e9d5c7afa5
           <h2>TODO</h2>
           <p>URL <a href="http://.com">link</a>.</p>
         </div> ); }
@@ -149,8 +152,8 @@ var Jackie = React.createClass({
 
 var Lisa = React.createClass({
   render: function() { return ( <div>
-          <h2>TODO</h2>
-          <p>URL <a href="http://.com">link</a>.</p>
+          <h2>My LinkedIn Profile</h2>
+          <p>URL <a href="https://www.linkedin.com/in/lisalitchfield/">www.linkedin.com/in/lisalitchfield</a>.</p>
         </div> ); }
 });
 
@@ -172,7 +175,7 @@ var med3 = [
 {"org":"Lucile Packard Children's Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304","location":"94304","datetime":"2017-10-21T12:34:56","type":"medical","description":"med svc","attendance":7,"url":"https://health.usnews.com/best-hospitals/area/ca/lucile-salter-packard-childrens-hospital-at-stanford-6933605"}
 ];
 var Celine = React.createClass({
-	render: function() { 
+	render: function() {
 		var rows=[];
 		for (var line in med3){
 			{/*rows.push(med3[line].type);
@@ -193,8 +196,8 @@ var Celine = React.createClass({
 			{/*<p>URL <a href="http://.com">link</a>.</p>*/}
 			<br></br>
 			{rows}
-			
-		</div> ); 
+
+		</div> );
 	}
 }
 );
