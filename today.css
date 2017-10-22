@@ -1,0 +1,25 @@
+
+
+.todayContainer {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.todayHello {
+  font-size: 50px;
+  font-weight: lighter;
+  color: blue;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 3px;
+}
+
+.todayHeading {
+  font-size: 30px;
+}
+
+.todayDate {
+  color: #F9615D;
+  font-size: 2em;
+  position:relative;
+  top: -20px;
+}
