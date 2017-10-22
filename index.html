@@ -30,15 +30,11 @@ var App = React.createClass({
         <ul className="header">
 	  <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
 	  <li><Link to="/stuff" activeClassName="active">Stuff</Link></li>
-	  <li><Link to="/contact" activeClassName="active">Contact</Link></li>
 	  <li><Link to="/calendar" activeClassName="active">Calendar</Link></li>
 	  <li><Link to="/eventssc" activeClassName="active">EventSSC</Link></li>
     <li><Link to="/medical" activeClassName="active">Medical</Link></li>
 	  <li><Link to="/today" activeClassName="active">Today</Link></li>
-	  <li><Link to="/elaine" activeClassName="active">Elaine</Link></li>
-	  <li><Link to="/jackie" activeClassName="active">Jackie</Link></li>
 	  <li><Link to="/lisa" activeClassName="active">Lisa</Link></li>
-	  <li><Link to="/celine" activeClassName="active">Celine</Link></li>
         </ul>
         <div className="content"> {this.props.children} </div>
       </div> ) }
@@ -283,15 +279,11 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="stuff" component={Stuff} />
-      <Route path="contact" component={Contact} />
       <Route path="calendar" component={Calendar} />
       <Route path="eventssc" component={EventSSC} />
       <Route path="medical" component={Medical} />
       <Route path="today" component={Today} />
-      <Route path="elaine" component={Elaine} />
-      <Route path="jackie" component={Jackie} />
       <Route path="lisa" component={Lisa} />
-      <Route path="celine" component={Celine} />
     </Route>
   </Router>,
   destination
